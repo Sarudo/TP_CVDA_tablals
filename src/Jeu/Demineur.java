@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Demineur {
 	
-	public static void main(String[] args){
+public static void main(String[] args){
         
         int x,y;
         Scanner sc=new Scanner(System.in);
@@ -117,6 +117,18 @@ public class Demineur {
         else {
             int t= autour(x, y, tailleTab, tabB);
             tabJ[x][y]=Integer.toString(t);
+            if (t==0){
+                for (int i=x-1;i<x+2;i++){
+                    if (i < 0 || i >= tailleTab )
+                        continue;
+                    for (int j=y-1;j<y+2;j++){
+                        if ( j < 0 || j >= tailleTab)
+                            continue;
+                        else 
+                        tabJ[i][j]=Integer.toString(autour(i,j,tailleTab,tabB));
+                    }
+                }  
+            }
             return true;
         }
     }
