@@ -1,1 +1,6 @@
 language: java
+install Maven
+mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+mvn test -B
+gradle assemble
+sudo: false
