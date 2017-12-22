@@ -1,7 +1,6 @@
 language: java
 sudo: false
 
-maven install
 script: "mvn cobertura:cobertura"
 
 after_success:
